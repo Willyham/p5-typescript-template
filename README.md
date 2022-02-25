@@ -27,3 +27,5 @@ yarn start-release
 # Build
 yarn release
 ```
+
+This currently works by running some `sed` magic to replace the import with a read from `window.p5`. Note that this might not be totally portable across environments. If you add other global dependencies, you may have to add similar hacks to exclude them from the build (see "targets" in package.json).

@@ -5,6 +5,7 @@ export let width: number = 0;
 export let height: number = 0;
 export let isDebugMode: boolean = false;
 export let isPaused: boolean = false;
+export const isProduction = process.env.NODE_ENV === "production";
 
 export const setValues = (p: p5): void => {
   emptyVector = p.createVector(0, 0);

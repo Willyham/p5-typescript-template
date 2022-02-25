@@ -5,10 +5,12 @@
   "author": "Willyham",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html",
-    "start-release": "parcel release.html --open",
-    "release": "parcel build release.html"
+    "start": "npm run clean && parcel index.html --open",
+    "build": "npm run clean && parcel build index.html",
+    "clean": "rm -rf dist",
+    "start-release": "npm run clean && parcel release.html --open",
+    "release": "npm run clean && parcel build release.html && npm run hack-import",
+    "hack-import": "sed -i.bak -E 's|import (.*) from\"p5\"|let \\1=window.p5|g' dist/*.js && rm dist/*.bak"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",

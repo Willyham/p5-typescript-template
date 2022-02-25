@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { setValues, isDebugMode, width, height } from "./globals";
+import { setValues, isDebugMode, width, height, isProduction } from "./globals";
 import { handleKeyPress } from "./keypress";
 
 type Circle = {
@@ -33,7 +33,7 @@ var sketch = (p: p5) => {
   p.draw = () => {
     p.background(0, 0, 0);
 
-    if (isDebugMode) {
+    if (isDebugMode && !isProduction) {
       // Render FPS as text
       p.push();
       p.fill(255, 255, 255);
