@@ -5,10 +5,11 @@
   "author": "Willyham",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .ts src && prettier --check 'src/**/*.ts'",
     "start": "npm run clean && parcel index.html --open",
     "build": "npm run clean && parcel build index.html",
     "clean": "rm -rf dist",
-    "start-release": "npm run clean && parcel release.html --open",
+    "start-release": "npm run clean && parcel releyase.html --open",
     "release": "npm run clean && parcel build release.html && npm run hack-import",
     "hack-import": "sed -i.bak -E 's|import (.*) from\"p5\"|let \\1=window.p5|g' dist/*.js && rm dist/*.bak"
   },
@@ -19,6 +20,7 @@
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.9.0",
     "parcel": "^2.3.2",
+    "prettier": "^2.5.1",
     "typescript": "^4.5.5"
   },
   "dependencies": {

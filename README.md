@@ -13,6 +13,7 @@ This is a template repo to get you started with p5js and typescript.
 - Latest p5js and typescript versions.
 - Explicit dependency declarations (no magic).
 - Hot reloading (via parcel).
+- Linting + prettier out of the box.
 - A "release" build which doesn't bundle p5.
 - Useful default behaviour ('d' for debug mode, 'space' for pause).
 
