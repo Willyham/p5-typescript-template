@@ -11,5 +11,8 @@
     ],
     "rootDir": "src",
     "moduleResolution": "node"
-  }
+  },
+  "exclude": [
+    "dist/**/*",
+  ]
 }

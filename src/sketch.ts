@@ -8,7 +8,7 @@ type Circle = {
   radius: number;
 };
 
-var sketch = (p: p5) => {
+const sketch = (p: p5) => {
   setValues(p);
 
   const circles: Circle[] = [];
